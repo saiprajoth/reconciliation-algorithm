@@ -1,0 +1,65 @@
+/* style.css */
+
+/* Root container */
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Individual Todo card */
+#root > div {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#root > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Todo title */
+#root > div > p:first-child {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0 0 4px 0;
+}
+
+/* Todo description */
+#root > div > p:nth-child(2) {
+  font-size: 0.95em;
+  color: #555;
+  margin: 0 0 6px 0;
+}
+
+/* Todo completion status */
+#root > div > p:last-child {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+#root > div > p:last-child:contains("Done") {
+  background-color: #4caf50;
+}
+
+#root > div > p:last-child:contains("Not Done") {
+  background-color: #f44336;
+}
+
+/* Optional: completed text style for better visual */
+#root > div.completed p:first-child,
+#root > div.completed p:nth-child(2) {
+  text-decoration: line-through;
+  color: #999;
+}
